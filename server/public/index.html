@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <script src="vendors/angular/angular.js"></script>
+    <script src = "vendors/angular-route/angular-route.js"></script>
+    <script src = "scripts/client.js"></script>
+
+    <!-- controllers -->
+    <script src = "scripts/controllers/car.controller.js"></script>
+    <script src = "scripts/controllers/company.controller.js"></script>
+
+    <!-- Services -->
+
+    
+    <title>Angular Services</title>
+</head>
+<body ng-app="CarApp">
+   <nav>
+    <a href="#!">Companies</a>
+    <a href="#!cars">Cars</a>
+   </nav>
+   
+   <ng-view></ng-view>   <!-- this is the only section our angular router has control over -->
+   
+</body>
+</html>
