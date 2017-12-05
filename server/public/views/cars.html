@@ -1,3 +1,23 @@
-<h1>About Page</h1>
+<h1>Cars</h1>
 
-<div>{{vm.message}}</div>
+
+<!-- <div ng-controller="CompanyController as vm"> 
+<select ng-model="vm.newCar.name">
+    <option ng-repeat="company in vm.companies.list" value="{{companies.name}}">{{companies.name}}</option>
+    </select>
+</div> -->
+
+<select ng-options="company.id as company.name for company in vm.companies.list track by company.id" ng-model="vm.newCar.company_id"></select>
+
+
+<input type = "text" ng-model= "vm.newCar.year" placeholder= "year">
+<input type = "text" ng-model= "vm.newCar.model" placeholder= "model">
+<input type = "text" ng-model= "vm.newCar.nickname" placeholder= "nickname">
+
+<button ng-click = "vm.addNewCar(vm.newCar)">Add</button>
+
+<ul>
+    <li ng-repeat="car in vm.car.list"> <!-- list is an array -->        
+     {{car.name}}, {{car.model}}, {{car.year}}, {{car.nickname}}, {{car.country}}.
+    </li>
+</ul>

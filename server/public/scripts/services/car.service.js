@@ -1,32 +1,32 @@
-app.service('CompanyService', ['$http', function ($http) {
+app.service('CarService', ['$http', function ($http) {
     var self = this; // self refers to the service. Inside the controller, self refers to the controller.
+    
+    self.car = { list: [] }; //turn this into object, one property which is an array
+    self.newCar = {};
 
-
-    self.companies = { list: [] }; //turn this into object, one property which is an array
-    self.newCompany = {};
-
-    self.getCompanies = function () {
+    self.getCar = function () {
         $http({
             method: 'GET',
-            url: '/companies'
+            url: '/cars'
         }).then(function (response) {
             console.log('response', response);
-            self.companies.list = response.data; 
+            self.car.list = response.data; 
 
         });
     };
-    self.getCompanies();
+    self.getCar();
 
-    self.addNewCompany = function (newCompany) {
+    self.addNewCar = function (newCar) {
         console.log('clicked');
         $http({
             method: 'POST',
-            url: '/companies',
-            data: newCompany
+            url: '/cars',
+            data: newCar
         }).then(function (response) {
             console.log('response', response);
 
 
         })
     }
+
 }]);
